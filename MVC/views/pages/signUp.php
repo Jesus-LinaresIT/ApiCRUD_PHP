@@ -1,3 +1,4 @@
+<h1>SignUp</h1>
 <form>
    <div class="form-group">
       <label for="email">Email address:</label>

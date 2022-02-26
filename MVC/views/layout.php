@@ -36,20 +36,24 @@
       <img src="img/logo.png" alt="logo" class="mx-auto d-block py-3">
    </div>
 
+   <!--===================================
+      NAVEGATION
+   ====================================-->
+
    <div class="container-fluid bg-light">
       <div class="container">
          <ul class="nav nav-justified py-2 nav-pills">
             <li class="nav-item">
-               <a href="signOut.html" class="nav-link">Sign up</a>
+               <a href="index.php?pages=signUp" class="nav-link active">Sign up</a>
             </li>
             <li class="nav-item">
-               <a href="logIn.html" class="nav-link">Login</a>
+               <a href="index.php?pages=login" class="nav-link">Login</a>
             </li>
             <li class="nav-item">
-               <a href="index.html" class="nav-link active">Home</a>
+               <a href="index.php?pages=home" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link">Sign out</a>
+               <a href="index.php?pages=signOut" class="nav-link">Sign out</a>
             </li>
          </ul>
       </div>
@@ -61,7 +65,21 @@
    <div class="container-fluid">
       <div class="container py-5">
          <?php
-            include "pages/home.php"
+
+            if (isset($_GET["pages"])){
+
+               if($_GET["pages"]== "signUp" ||
+                  $_GET["pages"]== "login" ||
+                  $_GET["pages"]== "home" ||
+                  $_GET["pages"]== "signOut"){
+
+                  include "pages/".$_GET["pages"].".php";
+               }
+
+            }else{
+               include "pages/signUp.php";
+            }
+
          ?>
       </div>
    </div>
