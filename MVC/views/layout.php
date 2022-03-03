@@ -120,6 +120,8 @@
                   $_GET["pages"]== "signOut"){
 
                   include "pages/".$_GET["pages"].".php";
+               }else{
+                  include "pages/error404.php";
                }
 
             }else{
