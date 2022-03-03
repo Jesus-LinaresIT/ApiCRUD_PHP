@@ -43,18 +43,64 @@
    <div class="container-fluid bg-light">
       <div class="container">
          <ul class="nav nav-justified py-2 nav-pills">
-            <li class="nav-item">
-               <a href="index.php?pages=signUp" class="nav-link active">Sign up</a>
-            </li>
-            <li class="nav-item">
-               <a href="index.php?pages=login" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-               <a href="index.php?pages=home" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-               <a href="index.php?pages=signOut" class="nav-link">Sign out</a>
-            </li>
+
+            <?php if (isset($_GET["pages"])): ?>
+
+               <?php if ($_GET["pages"]=="signUp"): ?>
+                  <li class="nav-item">
+                     <a href="index.php?pages=signUp" class="nav-link active">Sign up</a>
+                  </li>
+               <?php else: ?>
+                  <li class="nav-item">
+                     <a href="index.php?pages=signUp" class="nav-link">Sign up</a>
+                  </li>
+               <?php endif ?>
+
+               <?php if($_GET["pages"]=="login"): ?>
+                  <li class="nav-item">
+                    <a href="index.php?pages=login" class="nav-link active">Login</a>
+                  </li>
+               <?php else: ?>
+                  <li class="nav-item">
+                    <a href="index.php?pages=login" class="nav-link">Login</a>
+                  </li>
+               <?php endif ?>
+
+               <?php if($_GET["pages"]=="home"): ?>
+                  <li class="nav-item">
+                     <a href="index.php?pages=home" class="nav-link active">Home</a>
+                  </li>
+               <?php else: ?>
+                  <li class="nav-item">
+                     <a href="index.php?pages=home" class="nav-link">Home</a>
+                  </li>
+               <?php endif ?>
+
+               <?php if($_GET["pages"]=="signOut"): ?>
+                  <li class="nav-item">
+                     <a href="index.php?pages=signOut" class="nav-link active">Sign out</a>
+                  </li>
+               <?php else: ?>
+                  <li class="nav-item">
+                     <a href="index.php?pages=signOut" class="nav-link">Sign out</a>
+                  </li>
+               <?php endif ?>
+
+            <?php else: ?>
+               <li class="nav-item">
+                  <a href="index.php?pages=signUp" class="nav-link active">Sign up</a>
+               </li>
+               <li class="nav-item">
+                  <a href="index.php?pages=login" class="nav-link">Login</a>
+               </li>
+               <li class="nav-item">
+                  <a href="index.php?pages=home" class="nav-link">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a href="index.php?pages=signOut" class="nav-link">Sign out</a>
+               </li>
+            <?php endif ?>
+
          </ul>
       </div>
    </div>
