@@ -24,8 +24,7 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
    <!-- Latest compiled FontAwesome -->
-   <script src="https://kit.fontawesome.com/e632f1f723.js" crossorigin="anonymous"></script>
-</head>
+   <script src="https://kit.fontawesome.com/2473594c62.js" crossorigin="anonymous"></script></head>
 
 <body>
    <!--===================================
