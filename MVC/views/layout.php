@@ -30,7 +30,6 @@
    <!--===================================
       LOGO
    ====================================-->
-
    <div class="container-fluid">
       <img src="img/logo.png" alt="logo" class="mx-auto d-block py-3">
    </div>
@@ -38,7 +37,6 @@
    <!--===================================
       NAVEGATION
    ====================================-->
-
    <div class="container-fluid bg-light">
       <div class="container">
          <ul class="nav nav-justified py-2 nav-pills">

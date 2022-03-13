@@ -41,7 +41,7 @@
 
       <?php
 
-      $register = ControllerForm::ctrRegister();
+      $register = ControllerUser::ctrCreate();
       if ($register == "ok"){
          /*==================================
             Create script for clean alert of user register
