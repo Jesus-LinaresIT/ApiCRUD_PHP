@@ -3,7 +3,7 @@
 Class ControllerUser{
 
    /*==================================
-      Register
+      Register Users
    ==================================*/
    static public function ctrCreate(){
 
@@ -19,6 +19,17 @@ Class ControllerUser{
 
          return $response;
       }
+   }
+
+   /*==================================
+      Get Users
+   ==================================*/
+   static public function ctrGetDataUser(){
+      $table = 'data_registers';
+
+      $response = User::mdlGetUsers($table);
+
+      return $response;
    }
 
 }
