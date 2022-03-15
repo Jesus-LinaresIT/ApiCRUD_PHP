@@ -32,18 +32,29 @@ Class User{
    /*==================================
       Get Users
    ==================================*/
-   static public function mdlGetUsers($table){
+   static public function mdlGetUsers($table, $item, $value){
 
-      $stmt = Conections::conect()->prepare("SELECT *, DATE_FORMAT(date, '%d/%m/%Y') 
+      if($item == null && $value == null){
+         $stmt = Conections::conect()->prepare("SELECT *, DATE_FORMAT(date, '%d/%m/%Y')
          AS date FROM $table ORDER BY id DESC");
 
-      try {
-         $stmt->execute();
-         return $stmt->fetchAll();
-      } catch (Exception $e){
-         echo 'Error Message: ', $e->getMessage(),"\n";
-      }
+         try {
+            $stmt->execute();
 
+            return $stmt->fetchAll();
+
+         }catch (Exception $e){
+            echo 'Error Message: ', $e->getMessage(),"\n";
+         }
+      }else{
+         $stmt = Conections::conect()->prepare("SELECT *, DATE_FORMAT(date, '%d/%m/%Y')
+         AS date FROM $table WHERE $item = :$item ORDER BY id DESC");
+
+         $stmt->bindParam(":".$item, $value, PDO::PARAM_STR);
+         $stmt->execute();
+
+         return $stmt->fetch();
+      }
 
       $stmt->close();
       $stmt = null;
