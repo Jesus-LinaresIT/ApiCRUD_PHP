@@ -1,3 +1,5 @@
+
+
 <?php
 
 Class ControllerUser{
@@ -48,6 +50,8 @@ Class ControllerUser{
          $response = User::mdlGetUsers($table, $item, $value);
 
          if($response && $response["password"] == $loginPassword){
+
+            $_SESSION["loginValidate"] = "ok";
             echo '<script>
 
                if ( window.history.replaceState ){

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,7 +126,7 @@
                }
 
             }else{
-               include "pages/signUp.php";
+               include "pages/login.php";
             }
 
          ?>

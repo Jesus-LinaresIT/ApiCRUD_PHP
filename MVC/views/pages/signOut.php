@@ -1,1 +1,5 @@
-<h1>signOut</h1>
+<?php
+
+session_destroy();
+
+echo "<script>window.location='index.php?pages=login'</script>";
